@@ -1,0 +1,102 @@
+/* --- Main Dock Container --- */
+.dock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 72px; /* Collapsed width */
+  background-color: rgba(15, 23, 42, 0.8); /* bg-slate-900 with opacity */
+  border-right: 1px solid rgba(51, 65, 85, 0.5); /* border-slate-700 */
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  
+  /* Smooth transition for width and background */
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-color 0.3s ease;
+  
+  /* Center the list vertically */
+  display: flex;
+  align-items: center;
+}
+
+/* --- On Hover: Expand the Dock --- */
+.dock:hover {
+  width: 220px; /* Expanded width */
+  background-color: rgba(15, 23, 42, 0.95);
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* --- Individual Menu Item (Link) --- */
+.menuItem {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  color: #94a3b8; /* text-slate-400 */
+  text-decoration: none;
+  overflow: hidden; /* Hide label when dock is collapsed */
+  white-space: nowrap;
+  position: relative;
+  outline: none; /* We will handle focus visibility below */
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* --- Hover and Focus states for menu items --- */
+.menuItem:hover,
+.menuItem:focus-visible {
+  color: #f8fafc; /* text-slate-50 */
+  background-color: rgba(51, 65, 85, 0.5); /* bg-slate-700 */
+}
+
+/* --- Active Link Styling --- */
+.menuItem.active {
+  color: #f8fafc; /* text-slate-50 */
+  font-weight: 600;
+}
+
+/* A little bar on the left to indicate the active page */
+.menuItem.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 28px;
+  background-color: #38bdf8; /* sky-400 */
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* --- Icon Styling --- */
+.icon {
+  /* This ensures icons are always centered, even when dock expands */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px; 
+  height: 100%;
+}
+
+/* --- Label Styling --- */
+.label {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-left: 12px;
+}
+
+/* --- On Dock Hover: Reveal the Label --- */
+.dock:hover .label {
+  opacity: 1;
+  transform: translateX(0);
+  /* A slight delay makes the animation feel more intentional */
+  transition-delay: 0.1s;
+}

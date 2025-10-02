@@ -1,0 +1,43 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wrap {
+  padding: 60px 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.header {
+  text-align: center;
+  max-width: 65ch;
+  margin: 0 auto 48px auto;
+}
+.header p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  /* Ensures cards in the same row stretch to the same height */
+  align-items: stretch;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 48px 24px;
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+.emptyState h2 {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+}
+.emptyState p {
+  color: var(--color-text-muted);
+}

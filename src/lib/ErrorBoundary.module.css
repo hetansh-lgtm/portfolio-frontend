@@ -1,0 +1,61 @@
+.wrap {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  font-family: var(--font-mono);
+}
+
+.errorCard {
+  max-width: 600px;
+  width: 100%;
+  padding: 24px;
+}
+
+.title {
+  font-size: 1.25rem;
+  margin: 0 0 12px;
+  color: var(--color-text);
+}
+
+.prompt {
+  color: var(--color-accent-pink);
+  margin-right: 0.5em;
+}
+
+.message {
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.details {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 12px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  white-space: pre-wrap; /* Allows long error messages to wrap */
+  word-break: break-all;
+  margin: 20px 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.homeLink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.homeLink:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}

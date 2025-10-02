@@ -1,0 +1,70 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wrap {
+  padding: 60px 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.header {
+  text-align: center;
+  max-width: 65ch;
+  margin: 0 auto 48px auto;
+}
+.header p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+}
+
+/* The main grid for categories */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.categoryCard {
+  padding: 24px;
+}
+
+.categoryTitle {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  color: var(--color-accent-yellow);
+}
+
+.skillList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  /* Creates two columns of skills inside the card */
+  grid-template-columns: 1fr 1fr; 
+  gap: 16px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+  color: var(--color-accent-cyan);
+}
+
+@media (max-width: 700px) {
+  .skillList {
+    /* Stack to one column on smaller cards */
+    grid-template-columns: 1fr;
+  }
+}
