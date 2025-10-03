@@ -4,15 +4,14 @@
 }
 
 .wrap {
-  padding: 60px 0;
-  min-height: 80vh; /* Vertically center the content */
+  padding: 60px 16px; /* Add horizontal padding for mobile */
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* The main terminal window container */
 .terminalWindow {
   max-width: 700px;
   width: 100%;
@@ -23,7 +22,6 @@
   overflow: hidden;
 }
 
-/* Title bar with dots */
 .titleBar {
   display: flex;
   align-items: center;
@@ -49,16 +47,16 @@
 .title {
   color: var(--color-text-muted);
   font-size: 0.8rem;
-  margin: 0 auto; /* Center the title */
+  margin: 0 auto;
   font-family: var(--font-mono);
 }
 
-/* Terminal body content */
 .terminalBody {
   padding: 24px;
   font-family: var(--font-mono);
   font-size: 0.95rem;
   line-height: 1.8;
+  word-break: break-all; /* Allow long URLs to wrap */
 }
 
 .line {
@@ -74,7 +72,6 @@
   color: var(--color-accent-pink);
 }
 
-/* Quick Navigation Links */
 .quickNav {
   margin-top: 24px;
   padding-top: 24px;
@@ -104,4 +101,15 @@
 .linkList a:hover {
   background-color: color-mix(in srgb, var(--color-surface), #fff 10%);
   color: var(--color-text);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 480px) {
+  .terminalBody {
+    font-size: 0.85rem;
+    padding: 16px;
+  }
+  .linkList {
+    grid-template-columns: 1fr; /* Stack links vertically */
+  }
 }

@@ -2,65 +2,49 @@
 
 /* 1. CSS VARIABLES */
 :root {
-  /* Fonts */
   --font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --font-mono: 'Fira Code', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'Liberation Mono', monospace;
-
-  /* Radii & Shadows */
   --radius: 8px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-
-  /* "Monokai" Inspired Palette (Dark mode is default) */
-  --color-bg: #20211C; /* Dark Charcoal */
-  --color-surface: #272822; /* Classic Monokai Background */
-  --color-text: #F8F8F2; /* Off-white */
-  --color-text-muted: #90918B; /* Muted gray */
+  --color-bg: #20211C;
+  --color-surface: #272822;
+  --color-text: #F8F8F2;
+  --color-text-muted: #90918B;
   --color-border: #414339;
-  
-  /* Syntax Accent Colors */
   --color-accent-pink: #F92672;
   --color-accent-green: #A6E22E;
   --color-accent-cyan: #66D9EF;
   --color-accent-yellow: #E6DB74;
-
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    /* A simple, clean light theme */
     --color-bg: #f8f8f8;
     --color-surface: #ffffff;
     --color-text: #222222;
     --color-text-muted: #666666;
     --color-border: #e0e0e0;
-    
-    /* Slightly desaturated accents for light mode */
     --color-accent-pink: #d12162;
     --color-accent-green: #7ca827;
     --color-accent-cyan: #22a0b9;
     --color-accent-yellow: #b8b05d;
-
     color-scheme: light;
   }
 }
 
-
-/* 2. BASE & SCANLINE BACKGROUND */
+/* 2. BASE STYLES */
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
   background-color: var(--color-bg);
   color: var(--color-text);
-  
-  /* Subtle, non-animated scanlines for a retro terminal feel */
   background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 1px 3px;
+  padding-left: 72px; /* Make space for the desktop nav dock */
 }
 
-
-/* 3. TYPOGRAPHY & BLINKING CURSOR */
 h1, h2, h3 {
   font-family: var(--font-mono);
   color: var(--color-text);
@@ -70,7 +54,7 @@ h1, h2, h3 {
 p {
   line-height: 1.7;
   color: var(--color-text-muted);
-  max-width: 65ch; /* Improves readability */
+  max-width: 65ch;
 }
 a {
   color: var(--color-accent-cyan);
@@ -79,10 +63,9 @@ a {
 }
 a:hover {
   color: var(--color-text);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
-/* Blinking cursor effect for headings */
 .typing-effect::after {
   content: '▋';
   display: inline-block;
@@ -95,32 +78,12 @@ a:hover {
   50% { opacity: 0; }
 }
 
-
-/* 4. UI ELEMENTS & COMPONENTS */
 .container {
   max-width: 1140px;
   margin-inline: auto;
   padding-inline: 16px;
 }
 
-/* Replaces ".glass-surface" */
-.solid-surface {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-header.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(32, 33, 28, 0.85); /* The --color-bg with transparency */
-  backdrop-filter: blur(8px); /* A much less intense blur, often better for performance */
-  border-bottom: 1px solid var(--color-border);
-}
-
-/* Card style, replacing ".interactive-card" */
 .data-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -132,7 +95,6 @@ header.sticky {
   border-color: var(--color-accent-pink);
 }
 
-/* Button */
 .btn {
   font-family: var(--font-mono);
   font-size: 0.95rem;
@@ -145,7 +107,19 @@ header.sticky {
   transition: background-color 0.2s ease;
 }
 .btn:hover {
-  background-color: var(--color-surface);
+  background-color: var(--color-text);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .sr-only:focus {
@@ -159,10 +133,17 @@ header.sticky {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  /* These lines undo the "hiding" styles */
   width: auto;
   height: auto;
   clip: auto;
   margin: 0;
   overflow: visible;
+}
+
+/* --- Responsive Global Adjustments --- */
+@media (max-width: 768px) {
+  body {
+    padding-left: 0; /* Remove side padding */
+    padding-bottom: 64px; /* Add bottom padding to prevent nav bar from covering content */
+  }
 }

@@ -8,7 +8,6 @@
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Main two-column grid layout */
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -16,7 +15,6 @@
   align-items: flex-start;
 }
 
-/* Style for the lead paragraph */
 .lead {
   font-size: 1.2rem;
   color: var(--color-text);
@@ -28,10 +26,9 @@
   margin-bottom: 1.5rem;
 }
 
-/* Image styles */
 .imageColumn {
   position: sticky;
-  top: 120px; /* Aligns with sticky header */
+  top: 120px;
 }
 
 .imageWrapper {
@@ -55,7 +52,6 @@
   filter: saturate(1);
 }
 
-/* Value Cards Section */
 .valuesSection {
   margin-top: 2rem;
 }
@@ -100,20 +96,22 @@
 
 .valueIcon {
   color: var(--color-accent-green);
-  flex-shrink: 0; /* Prevents icon from shrinking */
+  flex-shrink: 0;
   margin-top: 2px;
 }
 
-/* Responsive adjustments for smaller screens */
+/* --- Responsive Adjustments --- */
 @media (max-width: 900px) {
+  .wrap {
+    padding: 48px 0;
+  }
   .grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-
   .imageColumn {
-    /* Unstick the image and move it to the top */
     position: static;
-    grid-row: 1; 
+    grid-row: 1;
   }
 }
+

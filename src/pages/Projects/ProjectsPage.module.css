@@ -23,7 +23,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 24px;
-  /* Ensures cards in the same row stretch to the same height */
   align-items: stretch;
 }
 
@@ -41,3 +40,25 @@
 .emptyState p {
   color: var(--color-text-muted);
 }
+
+.feedback, .feedbackError {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  padding: 40px;
+}
+
+.feedbackError {
+  color: var(--color-accent-pink);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .wrap {
+    padding: 48px 0;
+  }
+}
+

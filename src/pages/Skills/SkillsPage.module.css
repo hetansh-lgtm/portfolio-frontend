@@ -19,7 +19,6 @@
   margin-top: 8px;
 }
 
-/* The main grid for categories */
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -44,7 +43,6 @@
   padding: 0;
   margin: 0;
   display: grid;
-  /* Creates two columns of skills inside the card */
   grid-template-columns: 1fr 1fr; 
   gap: 16px;
 }
@@ -62,9 +60,15 @@
   color: var(--color-accent-cyan);
 }
 
+/* --- Responsive Adjustments --- */
 @media (max-width: 700px) {
   .skillList {
-    /* Stack to one column on smaller cards */
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsGrid {
     grid-template-columns: 1fr;
   }
 }

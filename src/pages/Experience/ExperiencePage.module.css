@@ -19,14 +19,12 @@
   margin-top: 8px;
 }
 
-/* Timeline Container */
 .timeline {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* The vertical line for the timeline */
 .timeline::after {
   content: '';
   position: absolute;
@@ -37,13 +35,11 @@
   left: 20px;
 }
 
-/* Individual Job Entry */
 .job {
   padding: 10px 40px 30px 60px;
   position: relative;
 }
 
-/* The dot on the timeline */
 .job::before {
   content: '';
   position: absolute;
@@ -52,7 +48,7 @@
   border-radius: 50%;
   background-color: var(--color-surface);
   border: 3px solid var(--color-accent-cyan);
-  left: 13px; /* ( (2px line / 2) + 20px padding ) - (16px dot / 2) */
+  left: 13px;
   top: 18px;
   z-index: 1;
 }
@@ -85,7 +81,7 @@
   margin-bottom: 12px;
 }
 .description li::before {
-  content: '▹'; /* Triangle bullet */
+  content: '▹';
   position: absolute;
   left: 0;
   color: var(--color-accent-pink);
@@ -107,8 +103,10 @@
   background-color: var(--color-surface);
 }
 
+/* --- Responsive Adjustments --- */
 @media (max-width: 600px) {
   .timeline::after { left: 10px; }
   .job { padding: 10px 10px 30px 40px; }
   .job::before { left: 3px; }
+  .jobHeader .role { font-size: 1.3rem; }
 }

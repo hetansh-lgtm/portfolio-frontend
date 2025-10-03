@@ -5,7 +5,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Important for grid layout */
+  height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   box-shadow: var(--shadow);
 }
@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex-grow: 1; /* Allows footer (tech list) to stick to the bottom */
+  flex-grow: 1;
 }
 
 .header {
@@ -70,7 +70,7 @@
   color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
-  flex-grow: 1; /* Pushes tech list to the bottom */
+  flex-grow: 1;
 }
 
 .techList {
@@ -79,7 +79,7 @@
   gap: 8px;
   list-style: none;
   padding: 0;
-  margin-top: auto; /* Aligns to the bottom of the card body */
+  margin-top: auto;
 }
 .techList li {
   font-size: 0.8rem;
