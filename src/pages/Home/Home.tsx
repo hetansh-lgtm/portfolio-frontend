@@ -7,9 +7,10 @@ import me from './me.jpg'
 
 const ROLES = [
   'Software Engineer',
-  'Frontend Developer',
+  'Backend Developer',
   'Cloud Native Enthusiast',
   'Problem Solver',
+  'AI Geek'
 ];
 
 const SKILLS = [
@@ -51,12 +52,12 @@ export default function Home() {
                 Available for new opportunities
               </div>
               <h1>
-                Hi, I'm <span className={styles.name}>Your Name</span>.
+                Hi, I'm <span className={styles.name}>Hetansh Patel</span>.
                 <br />
                 I'm a <span className={`${styles.dynamicText} typing-effect`}>{ROLES[roleIndex]}</span>
               </h1>
               <p>
-                Based in East Cobb, I craft high-performance web applications that are reliable, scalable, and provide a great user experience.
+                Based in East Cobb, I craft high-performance applications that are reliable, scalable, and provide a great user experience.
               </p>
               <div className={styles.cta}>
                 <Link to='/experience' className='btn'>Experience</Link>
