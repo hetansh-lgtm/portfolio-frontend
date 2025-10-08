@@ -34,7 +34,7 @@ export default function AboutPage() {
             </p>
             <div className={styles.bio}>
               <p>
-                From a young age, I've been fascinated by how things work, which led me to the world of software development. For me, coding is the ultimate creative medium—a way to solve real-world problems and build useful, beautiful things from scratch.
+                I've been fascinated by how things work, which led me to the world of software development. For me, coding is the ultimate creative medium. A way to solve real-world problems and build useful, beautiful things from scratch.
               </p>
               <p>
                 My goal is to build products that are not only technically robust but also genuinely improve people's lives. I thrive in collaborative environments where I can learn from my peers and contribute to a shared vision.
